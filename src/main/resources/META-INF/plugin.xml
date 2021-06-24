@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.github.joaolenodev.phpstormstatamicantlersplugin</id>
-    <name>phpstorm-statamic-antlers-plugin</name>
+    <name>phpstorm-statamic-antlers</name>
     <vendor>joaoleno-dev</vendor>
 
     <!-- Product and plugin compatibility requirements -->
@@ -10,6 +10,11 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.joaolenodev.phpstormstatamicantlersplugin.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.joaolenodev.phpstormstatamicantlersplugin.services.MyProjectService"/>
+        <fileType name="Antlers File"
+                  language="Antlers"
+                  implementationClass="com.github.joaolenodev.phpstormstatamicantlersplugin.language.AntlersFileType"
+                  fieldName="INSTANCE"
+                  patterns="*.antlers.html"/>
     </extensions>
 
     <applicationListeners>
